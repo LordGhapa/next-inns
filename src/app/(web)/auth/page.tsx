@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 "use client";
 import { type ChangeEvent, useState, type FormEvent } from "react";
 import { AiFillGithub } from "react-icons/ai";
