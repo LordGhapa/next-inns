@@ -50,7 +50,7 @@ export default function Footer() {
         <Link
           href={"https://www.linkedin.com/in/felipe-lacerda-oliveira/"}
           target="_blank"
-          className=" ml-2  transition-all duration-300 hover:scale-110 "
+          className=" ml-2  text-black transition-all duration-300 hover:scale-110 "
         >
           Felipe Lacerda
         </Link>

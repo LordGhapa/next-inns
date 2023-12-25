@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { TailwindIndicator } from "./utils/TailwindIndicator";
+import ThemeProvider from "@/components/ThemeProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -26,12 +27,14 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={poppins.className}>
-        <main className="font-normal">
-          <Header />
-          {children}
-          <Footer />
-          <TailwindIndicator />
-        </main>
+        <ThemeProvider>
+          <main className="font-normal">
+            <Header />
+            {children}
+            <Footer />
+            <TailwindIndicator />
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
