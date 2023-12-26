@@ -1,7 +1,7 @@
 import { defineField } from "sanity";
 
 const verificationToken = {
-  name: "inns-verification-token",
+  name: "verification-token",
   title: "Verification Token",
   type: "document",
   fields: [

@@ -1,7 +1,7 @@
 import { defineField } from "sanity";
 
 const account = {
-  name: "inns-account",
+  name: "account",
   title: "Conta",
   type: "document",
   fields: [

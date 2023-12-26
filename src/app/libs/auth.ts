@@ -26,22 +26,23 @@ export const authOptions: NextAuthOptions = {
   adapter: SanityAdapter(client as SanityClient),
   debug: process.env.NODE_ENV === "development",
   secret: process.env.NEXTAUTH_SECRET,
-  // callbacks: {
-  //   session: async ({ session, token }) => {
-  //     const userEmail = token.email;
-  //     const userIdObj = await client.fetch<{ _id: string }>(
-  //       `*[_type == "user" && email == $email][0] {
-  //           _id
-  //       }`,
-  //       { email: userEmail },
-  //     );
-  //     return {
-  //       ...session,
-  //       user: {
-  //         ...session.user,
-  //         id: userIdObj._id,
-  //       },
-  //     };
-  //   },
-  // },
+  // para adicionar informaçoes adicionais
+  callbacks: {
+    session: async ({ session, token }) => {
+      const userEmail = token.email;
+      const userIdObj = await client.fetch<{ _id: string }>(
+        `*[_type == "user" && email == $email][0] {
+            _id
+        }`,
+        { email: userEmail },
+      );
+      return {
+        ...session,
+        user: {
+          ...session.user,
+          id: userIdObj._id,
+        },
+      };
+    },
+  },
 };

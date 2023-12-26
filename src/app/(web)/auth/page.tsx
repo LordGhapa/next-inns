@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 /* eslint-disable @typescript-eslint/no-misused-promises */
 "use client";
-import { type ChangeEvent, useState, type FormEvent } from "react";
+import { type ChangeEvent, useState, type FormEvent, useEffect } from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { signUp } from "next-auth-sanity/client";
@@ -25,12 +26,14 @@ export default function auth() {
   };
 
   const { data: session } = useSession();
-  console.log(session);
+
+  useEffect(() => {
+    if (session) router.push("/");
+  }, [router, session]);
 
   const loginHandle = async () => {
     try {
       await signIn();
-
       router.push("/");
     } catch (e) {
       console.log(e);

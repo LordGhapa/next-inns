@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   title: "Next-Inns",
   description:
     "Aqui você encontra o hotel perfeito para sua viagem, seja para negócios ou lazer.",
+  icons: "./favicon.ico",
 };
 
 export default function RootLayout({
