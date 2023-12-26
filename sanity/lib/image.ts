@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import createImageUrlBuilder from "@sanity/image-url";
 import type { Image } from "sanity";
 

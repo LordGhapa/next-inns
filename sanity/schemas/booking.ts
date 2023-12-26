@@ -9,7 +9,7 @@ const booking = {
       name: "user",
       title: "Usuário",
       type: "reference",
-      to: [{ type: "inns-user" }],
+      to: [{ type: "user" }],
       validation: (Rule) => Rule.required(),
     }),
     defineField({

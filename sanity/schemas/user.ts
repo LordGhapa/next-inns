@@ -1,8 +1,8 @@
 import { defineField } from "sanity";
 
 const user = {
-  name: "inns-user",
-  title: "usuário",
+  name: "user",
+  title: "Usuário",
   type: "document",
   fields: [
     defineField({
@@ -25,7 +25,7 @@ const user = {
     }),
     defineField({
       name: "image",
-      title: "Image",
+      title: "Image URL",
       type: "url",
     }),
     defineField({

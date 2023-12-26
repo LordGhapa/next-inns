@@ -3,7 +3,10 @@
 import { type ChangeEvent, useState, type FormEvent } from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
-
+import { signUp } from "next-auth-sanity/client";
+import { signIn, useSession } from "next-auth/react";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 const defaultFormData = {
   email: "",
   name: "",
@@ -12,6 +15,7 @@ const defaultFormData = {
 
 export default function auth() {
   const [formData, setFormData] = useState(defaultFormData);
+  const router = useRouter();
   const inputStyles =
     "border border-gray-300 sm:text-sm text-black rounded-lg block w-full p-2.5 focus:outline-nome  ";
 
@@ -20,12 +24,34 @@ export default function auth() {
     setFormData({ ...formData, [name]: value });
   };
 
+  const { data: session } = useSession();
+  console.log(session);
+
+  const loginHandle = async () => {
+    try {
+      await signIn();
+
+      router.push("/");
+    } catch (e) {
+      console.log(e);
+      toast.error("Algo Deu Errado");
+    }
+  };
   const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
+      const user = await signUp(formData);
+      console.log(user);
+
+      // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+      if (user) {
+        toast.success("Sucesso!!!");
+      }
+
       console.log(formData);
     } catch (error) {
       console.log(error);
+      toast.error("Algo Deu Errado");
     } finally {
       setFormData(defaultFormData);
     }
@@ -40,8 +66,14 @@ export default function auth() {
           </h1>
           <p>OU</p>
           <span className="inline-flex items-center ">
-            <AiFillGithub className="mr-3 cursor-pointer text-4xl text-black dark:text-white " />
-            <FcGoogle className="lm-3 cursor-pointer text-4xl " />
+            <AiFillGithub
+              onClick={loginHandle}
+              className="mr-3 cursor-pointer text-4xl text-black dark:text-white "
+            />
+            <FcGoogle
+              onClick={loginHandle}
+              className="lm-3 cursor-pointer text-4xl "
+            />
           </span>
         </div>
         <form className="space-y-4 md:space-y-6" onSubmit={handleSubmitForm}>
@@ -72,7 +104,6 @@ export default function auth() {
             value={formData.password}
             onChange={handleInputChange}
             min={6}
-            max={6}
           />
           <button
             type="submit"
@@ -81,7 +112,9 @@ export default function auth() {
             Enviar
           </button>
         </form>
-        <button className="text-blue-700 underline ">Login</button>
+        <button onClick={loginHandle} className="text-blue-700 underline ">
+          Login
+        </button>
       </div>
     </section>
   );

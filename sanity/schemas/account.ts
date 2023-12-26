@@ -33,7 +33,7 @@ const account = {
       name: "user",
       title: "user",
       type: "reference",
-      to: { type: "inns-user" },
+      to: { type: "user" },
     }),
   ],
 };

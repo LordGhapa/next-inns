@@ -9,7 +9,7 @@ const review = {
       name: "user",
       title: "Usuário",
       type: "reference",
-      to: [{ type: "inns-user" }],
+      to: [{ type: "user" }],
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -30,7 +30,10 @@ const review = {
       title: "Avaliação do Usuário",
       type: "number",
       validation: (Rule) =>
-        Rule.required().min(1).max(5).error("Rating must be between 1 and 5"),
+        Rule.required()
+          .min(1)
+          .max(5)
+          .error("A classificação deve estar entre 1 e 5"),
     }),
   ],
 };
