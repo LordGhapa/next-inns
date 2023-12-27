@@ -1,9 +1,9 @@
 import { defineField } from "sanity";
 
 const roomTypes = [
-  { title: "Basic", value: "basic" },
-  { title: "Luxury", value: "luxury" },
-  { title: "Suite", value: "suite" },
+  { title: "Básico", value: "basico" },
+  { title: "Luxo", value: "Luxo" },
+  { title: "Suíte", value: "suite" },
 ];
 
 const hotelRoom = {
