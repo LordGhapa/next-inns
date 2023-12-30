@@ -8,7 +8,6 @@ import { getFeaturedRoom } from "../libs/apis";
 export default async function Home() {
   const featuredRoom = await getFeaturedRoom();
 
-
   return (
     <>
       <HeroSection />
