@@ -12,7 +12,7 @@ export default function NewsLetter() {
         <div className="flex w-full flex-col justify-center pt-12 md:flex-row">
           <input
             type="email"
-            placeholder="Your email"
+            placeholder="Digite seu melhor email"
             className="mb-2 h-11 rounded-xl bg-[#026057] pl-6 text-white placeholder:text-white focus:outline-none md:mb-0 md:mr-5 md:h-16 md:w-[452px]"
           />
           <button type="button" className="btn-tertiary">
