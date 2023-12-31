@@ -38,8 +38,6 @@ export default function Rooms() {
     throw new Error("Erro ao fazer fetch da pagina rooms");
 
   const filterRooms = (rooms: Room[]) => {
-    console.log(rooms);
-
     return rooms.filter((room) => {
       if (
         roomTypeFilter &&
