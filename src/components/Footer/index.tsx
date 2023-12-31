@@ -7,11 +7,11 @@ export default function Footer() {
   return (
     <footer className="mt-16">
       <div className="container mx-auto px-4">
-        <Link href="/" className="text-tertiary-dark font-black">
+        <Link href="/" className="font-black text-tertiary-dark">
           NEXT-INNS
         </Link>
 
-        <h4 className="py-6 text-[40px] font-semibold">Contact</h4>
+        <h4 className="py-6 text-[40px] font-semibold">Contato</h4>
 
         <div className="flex flex-col flex-wrap justify-between gap-16 sm:flex-row sm:items-center">
           <div className="flex-1">
@@ -21,7 +21,7 @@ export default function Footer() {
               <Link
                 href={"https://www.linkedin.com/in/felipe-lacerda-oliveira/"}
                 target="_blank"
-                className="border-tertiary-light hover:border-tertiary-dark  ml-2 border-b transition-all duration-300 hover:scale-110 hover:border-b"
+                className="ml-2 border-b  border-tertiary-light transition-all duration-300 hover:scale-110 hover:border-b hover:border-tertiary-dark"
               >
                 Felipe Lacerda
               </Link>
@@ -46,7 +46,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="bg-tertiary-light  bottom-0  mt-16 flex h-10 w-full items-center justify-center md:h-[70px]">
+      <div className="bottom-0  mt-16  flex h-10 w-full items-center justify-center bg-tertiary-light md:h-[70px]">
         <Link
           href={"https://www.linkedin.com/in/felipe-lacerda-oliveira/"}
           target="_blank"
