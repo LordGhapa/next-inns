@@ -46,8 +46,8 @@ export default function Search({
               className="w-full rounded px-4 py-2 capitalize leading-tight focus:outline-none dark:bg-black "
             >
               <option value="All">Todos</option>
-              <option value="Basic">Básico</option>
-              <option value="Luxury">Luxo</option>
+              <option value="Basico">Básico</option>
+              <option value="Luxo">Luxo</option>
               <option value="Suite">Suite</option>
             </select>
           </div>

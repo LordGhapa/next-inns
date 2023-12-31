@@ -1,4 +1,4 @@
-import { type Room } from "@/app/models/room";
+import { type Room } from "@/models/room";
 import Image from "next/image";
 import Link from "next/link";
 

@@ -3,13 +3,13 @@ import {
   type UpdateReviewDto,
   type CreateReviewDto,
   type Review,
-} from "./../models/review";
+} from "../../models/review";
 import axios from "axios";
 
 import { client } from "./sanity";
 import * as queries from "./sanityQueries";
-import { type CreateBookingDto, type Room } from "../models/room";
-import { type Booking } from "../models/booking";
+import { type CreateBookingDto, type Room } from "../../models/room";
+import { type Booking } from "../../models/booking";
 
 export async function getFeaturedRoom() {
   const result = await client.fetch<Room>(
@@ -27,7 +27,7 @@ export async function getRooms() {
   const result = await client.fetch<Room[]>(
     queries.getRoomsQuery,
     {},
-    { cache: "no-cache" },
+    { cache: "force-cache" },
   );
   return result;
 }
@@ -36,7 +36,7 @@ export async function getRoom(slug: string) {
   const result = await client.fetch<Room>(
     queries.getRoom,
     { slug },
-    { cache: "no-cache" },
+    { cache: "force-cache" },
   );
 
   return result;

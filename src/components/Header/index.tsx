@@ -12,7 +12,6 @@ export default function Header() {
   const { darkTheme, setDarkTheme } = useThemeContext();
 
   const { data: session } = useSession();
-  console.log(session);
 
   return (
     <header className="container mx-auto flex flex-wrap items-center justify-between  px-4 py-10 text-xl md:flex-nowrap ">
@@ -71,7 +70,7 @@ export default function Header() {
           <Link href={"/"}>Inicio</Link>
         </li>
         <li className="transition-all duration-500 hover:translate-y-2">
-          <Link href={"/vagas"}>Vagas</Link>
+          <Link href={"/rooms"}>Vagas</Link>
         </li>
         <li className="transition-all duration-500 hover:translate-y-2">
           <Link href={"/contato"}>Contato</Link>
