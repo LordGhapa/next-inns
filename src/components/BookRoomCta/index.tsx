@@ -70,8 +70,8 @@ export default function BookRoomCta({
       </h3>
       <div className="my-2 w-full border-b-2 border-b-secondary" />
       <h4 className="my-8 ">{specialNote}</h4>
-      <div className="flex ">
-        <div className="w-1/2 pr-2 ">
+      <div className="flex gap-1">
+        <div className="w-1/2  ">
           <label
             htmlFor="check-in-date"
             className="block text-sm font-medium text-gray-900 dark:text-gray-400"
@@ -89,7 +89,7 @@ export default function BookRoomCta({
             className="w-full rounded-lg border border-gray-300 p-2.5 text-black focus:border-primary focus:ring-primary"
           />
         </div>
-        <div className="w-1/2 pr-2 ">
+        <div className="w-1/2  ">
           <label
             htmlFor="check-out-date"
             className="block text-sm font-medium text-gray-900 dark:text-gray-400"
@@ -110,8 +110,8 @@ export default function BookRoomCta({
         </div>
       </div>
 
-      <div className="mt-4 flex ">
-        <div className="w-1/2 pr-2 ">
+      <div className="mt-4 flex gap-1 ">
+        <div className="w-1/2  ">
           <label
             htmlFor="adults"
             className="block text-sm font-medium text-gray-900 dark:text-gray-400"
@@ -127,10 +127,10 @@ export default function BookRoomCta({
             }}
             min={1}
             max={5}
-            className="w-full rounded-lg border border-gray-300 p-2.5"
+            className="w-full rounded-lg border border-gray-300 p-2.5 text-gray-900 "
           />
         </div>
-        <div className="w-1/2 pl-2 ">
+        <div className="w-1/2  ">
           <label
             htmlFor="children"
             className="block text-sm font-medium text-gray-900 dark:text-gray-400"
@@ -146,7 +146,7 @@ export default function BookRoomCta({
             }}
             min={1}
             max={5}
-            className="w-full rounded-lg border border-gray-300 p-2.5"
+            className="w-full rounded-lg border border-gray-300 p-2.5 text-gray-900 "
           />
         </div>
       </div>
@@ -160,7 +160,11 @@ export default function BookRoomCta({
         onClick={handleBookNowClick}
         className="btn-primary mt-6 w-full disabled:cursor-not-allowed disabled:bg-gray-500"
       >
-        {isBooked ? "Não Disponível" : "Reserve Agora"}
+        {isBooked ? (
+          <span>Não Disponível</span>
+        ) : (
+          <span className="text-sm">Reserve Agora</span>
+        )}
       </button>
     </div>
   );

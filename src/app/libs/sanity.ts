@@ -8,4 +8,5 @@ export const client = createClient({
   projectId,
   token: process.env.NEXT_PUBLIC_SANITY_STUDIO_TOKEN,
   useCdn,
+  ignoreBrowserTokenWarning: true,
 });

@@ -14,6 +14,7 @@ import BookRoomCta from "@/components/BookRoomCta";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { getStripe } from "@/app/libs/stripe";
 
 export default function RoomDetails(props: { params: { slug: string } }) {
   const {
@@ -79,7 +80,7 @@ export default function RoomDetails(props: { params: { slug: string } }) {
         });
 
         if (result.error) {
-          toast.error("Payment Failed");
+          toast.error("Falha ao Tenta fazer pagamento");
         }
       }
     } catch (error) {
@@ -92,7 +93,7 @@ export default function RoomDetails(props: { params: { slug: string } }) {
     <div>
       <HotelPhotoGallery photos={room.images} />
       <div className="container mx-auto mt-20 ">
-        <div className="gap-10 px-3 md:grid md:grid-cols-12">
+        <div className="gap-10 px-3 lg:grid lg:grid-cols-12">
           <div className="md:col-span-8 md:w-full ">
             <div>
               <h2 className="text-left text-lg font-bold md:text-2xl ">
@@ -173,8 +174,7 @@ export default function RoomDetails(props: { params: { slug: string } }) {
               </div>
             </div>
           </div>
-          <div className="sticky top-10 h-fit overflow-auto rounded-xl shadow-lg dark:shadow dark:shadow-white md:col-span-4 ">
-            {/* book room cta */}
+          <div className="sticky top-10 h-fit overflow-auto rounded-xl shadow-lg dark:shadow dark:shadow-white  md:col-span-4 ">
             <BookRoomCta
               checkinDate={checkinDate}
               setCheckinDate={setCheckinDate}
