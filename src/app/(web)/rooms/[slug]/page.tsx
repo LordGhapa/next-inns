@@ -85,7 +85,7 @@ export default function RoomDetails(props: { params: { slug: string } }) {
       }
     } catch (error) {
       console.log("Error: ", error);
-      toast.error("Ocorreu um Error");
+      toast.error("Ocorreu um Error | Verifique se esta logado");
     }
   };
 

@@ -44,14 +44,14 @@ export default function auth() {
     e.preventDefault();
     try {
       const user = await signUp(formData);
-      console.log(user);
+      // console.log(user);
 
       // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
       if (user) {
         toast.success("Sucesso!!!");
       }
 
-      console.log(formData);
+      // console.log(formData);
     } catch (error) {
       console.log(error);
       toast.error("Algo Deu Errado");

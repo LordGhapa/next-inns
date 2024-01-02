@@ -19,7 +19,7 @@ export default function Rooms() {
   useEffect(() => {
     const searchQuery = searchParams.get("searchQuery");
     const roomType = searchParams.get("roomType");
-    console.log();
+    // console.log();
 
     if (roomType != null) setRoomTypeFilter(roomType);
     if (searchQuery != null) setSearchQuery(searchQuery);

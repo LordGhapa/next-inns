@@ -81,7 +81,7 @@ export const createBooking = async ({
       },
     },
   );
-  console.log("CREATED RESPONSE>>>>", data);
+  // console.log("CREATED RESPONSE>>>>", data);
   return data;
 };
 
