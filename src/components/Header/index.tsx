@@ -65,15 +65,12 @@ export default function Header() {
           </li>
         </ul>
       </div>
-      <ul className="mt-4 flex w-full items-center justify-between md:w-1/3 ">
+      <ul className="mt-4 flex w-full items-center justify-end gap-24 md:w-1/3 ">
         <li className="transition-all duration-500 hover:translate-y-2">
           <Link href={"/"}>Inicio</Link>
         </li>
         <li className="transition-all duration-500 hover:translate-y-2">
           <Link href={"/rooms"}>Vagas</Link>
-        </li>
-        <li className="transition-all duration-500 hover:translate-y-2">
-          <Link href={"/contato"}>Contato</Link>
         </li>
       </ul>
     </header>
