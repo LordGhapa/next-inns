@@ -163,7 +163,7 @@ export default function BookRoomCta({
         {isBooked ? (
           <span>Não Disponível</span>
         ) : (
-          <span className="text-sm">Reserve Agora</span>
+          <span className="whitespace-nowrap">Reserve Agora</span>
         )}
       </button>
     </div>
