@@ -2,13 +2,21 @@ import Link from "next/link";
 import { BsTelephoneOutbound } from "react-icons/bs";
 import { BiMessageDetail } from "react-icons/bi";
 import { FaLinkedinIn } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="mt-16">
       <div className="container mx-auto px-4">
-        <Link href="/" className="font-black text-tertiary-dark">
-          NEXT-INNS
+        <Link href="/" className=" font-black text-tertiary-dark">
+          {/* NEXT-INNS */}
+          <Image
+            alt="logo"
+            src={"/logo.png"}
+            height={150}
+            width={150}
+            className="-ml-8"
+          />
         </Link>
 
         <h4 className="py-6 text-[40px] font-semibold">Contato</h4>

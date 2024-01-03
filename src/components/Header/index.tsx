@@ -16,8 +16,8 @@ export default function Header() {
   return (
     <header className="container mx-auto flex flex-wrap items-center justify-between  px-4 py-10 text-xl md:flex-nowrap ">
       <div className="flex w-full items-center md:w-2/3">
-        <Link href={"/"} className="font-black text-tertiary-light">
-          Next-Inns
+        <Link href={"/"} className="-ml-8 font-black text-tertiary-light">
+          <Image alt="logo" src={"/logo.png"} height={150} width={150} />
         </Link>
         <ul className=" ml-5 flex items-center">
           <li className="flex items-center">
