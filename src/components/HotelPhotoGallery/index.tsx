@@ -86,6 +86,7 @@ export default function HotelPhotoGallery(this: any, { photos }: Props) {
                 src={photo.url}
                 alt={`foto do quarto ${index + 2}`}
                 className="img scale-animation"
+                onClick={openModal.bind(this, index + 1)}
               />
             </div>
           ))}
