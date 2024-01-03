@@ -48,6 +48,8 @@ export async function POST(req: Request, res: Response) {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     const alreadyExists = await checkReviewExists(userId, roomId);
 
+    console.log(alreadyExists);
+
     let data;
 
     if (alreadyExists) {

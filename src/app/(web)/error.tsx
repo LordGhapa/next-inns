@@ -9,7 +9,7 @@ export default function Error({
   reset: () => void;
 }) {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto  flex min-h-[50vh] flex-col items-center justify-center">
       <h2 className="font-heading mb-10 text-red-800">Algo Deu Errado</h2>
 
       <button
