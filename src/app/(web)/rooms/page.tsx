@@ -31,7 +31,7 @@ export default function Rooms() {
     return await getRooms();
   }
 
-  const { data, error, isLoading } = useSWR("get/hotelRooms", fetchData);
+  const { data, error, isLoading } = useSWR("api/hotelRooms", fetchData);
 
   if (error) throw new Error("Erro ao fazer fetch da pagina rooms");
   if (typeof data === "undefined" && !isLoading)
