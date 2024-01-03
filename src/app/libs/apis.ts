@@ -223,12 +223,10 @@ export const createReview = async ({
   return data;
 };
 
-export async function getRoomReviews(roomId: string) {
+export async function getRoomReviews() {
   const result = await client.fetch<Review[]>(
     queries.getRoomReviewsQuery,
-    {
-      roomId,
-    },
+    {},
     { cache: "no-cache" },
   );
 

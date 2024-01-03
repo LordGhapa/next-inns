@@ -1,24 +1,27 @@
-import { FaStar, FaStarHalf } from "react-icons/fa";
+import React from "react";
+import { FaStar } from "react-icons/fa";
 
 interface Props {
   rating: number;
 }
 
 export default function Rating({ rating }: Props) {
-  const fullStars = Math.floor(rating);
-  const decimalPart = rating - fullStars;
+  // const fullStars = Math.floor(rating);
+  // const decimalPart = rating - fullStars;
 
-  const fullStarElements = Array(fullStars).fill(<FaStar />);
+  const fullStarElements = Array(rating).fill(<FaStar />);
 
-  let halfStarElement = null;
+  // const halfStarElement = null;
 
-  if (decimalPart > 0) {
-    halfStarElement = <FaStarHalf />;
-  }
+  // if (decimalPart > 0) {
+  //   halfStarElement = <FaStarHalf />;
+  // }
 
   return (
     <>
-      {fullStarElements} {halfStarElement}
+      {fullStarElements.map((el, index) => (
+        <React.Fragment key={index}>{el}</React.Fragment>
+      ))}
     </>
   );
 }

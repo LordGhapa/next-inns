@@ -17,6 +17,8 @@ import axios from "axios";
 import { getStripe } from "@/app/libs/stripe";
 import RoomReview from "@/components/RoomReview";
 
+export const dynamic = "force-dynamic";
+
 export default function RoomDetails(props: { params: { slug: string } }) {
   const {
     params: { slug },
@@ -33,6 +35,7 @@ export default function RoomDetails(props: { params: { slug: string } }) {
   if (typeof room === "undefined" && !isLoading)
     throw new Error("Erro ao fazer fetch da pagina rooms details");
   if (!room) return <Loading />;
+  if (isLoading) return <Loading />;
 
   const calcMinCheckoutDate = () => {
     if (checkinDate) {
@@ -170,7 +173,7 @@ export default function RoomDetails(props: { params: { slug: string } }) {
                   </p>
                 </div>
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2  ">
-                  <RoomReview roomId={room._id} />
+                  <RoomReview roomId={room._id} slug={slug} />
                 </div>
               </div>
             </div>

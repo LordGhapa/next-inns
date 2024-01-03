@@ -17,4 +17,5 @@ export interface Review {
   userRating: number;
   _createdAt: Date;
   _id: string;
+  hotelRoom: { slug: { current: string } };
 }

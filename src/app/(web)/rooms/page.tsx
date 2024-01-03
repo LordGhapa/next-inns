@@ -70,7 +70,7 @@ export default function Rooms() {
         setSearchQuery={setSearchQuery}
       />
       <div className="mt-20 flex flex-wrap justify-between ">
-        {filteredRooms.map((room) => (
+        {filteredRooms.map((room: Room) => (
           <RoomCard key={room._id} room={room} />
         ))}
       </div>

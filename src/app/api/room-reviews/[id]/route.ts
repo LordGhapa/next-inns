@@ -5,10 +5,8 @@ export async function GET(
   req: Request,
   { params }: { params: { id: string } },
 ) {
-  const roomId = params.id;
-
   try {
-    const roomReviews = await getRoomReviews(roomId);
+    const roomReviews = await getRoomReviews();
 
     return NextResponse.json(roomReviews, {
       status: 200,

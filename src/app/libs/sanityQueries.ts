@@ -70,12 +70,15 @@ export const getUserDataQuery = groq`*[_type == 'user' && _id == $userId][0] {
     image,
 }`;
 
-export const getRoomReviewsQuery = groq`*[_type == "inns-review" && hotelRoom._ref == $roomId] {
+export const getRoomReviewsQuery = groq`*[_type == "inns-review" ] {
     _createdAt,
     _id,
     text,
     user -> {
         name
     },
-    userRating
+    userRating,
+  hotelRoom->{
+    slug
+  }
 }`;
