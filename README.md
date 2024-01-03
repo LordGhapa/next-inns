@@ -1,5 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+Lembre webhook do stripe nao ira funcionar no modo dev sem cli esta ativo no pc https://stripe.com/docs/webhooks 
 ## Getting Started
 
 First, run the development server:
