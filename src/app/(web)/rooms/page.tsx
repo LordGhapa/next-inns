@@ -10,6 +10,8 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
 
+export const dynamic = "force-dynamic";
+
 export default function Rooms() {
   const [roomTypeFilter, setRoomTypeFilter] = useState("");
   const [searchQuery, setSearchQuery] = useState("");

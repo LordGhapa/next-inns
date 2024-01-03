@@ -9,6 +9,7 @@ import Rating from "../Rating";
 interface Props {
   roomId: string;
 }
+export const dynamic = "force-dynamic";
 
 export default function RoomReview({ roomId }: Props) {
   const fetchRoomReviews = async () => {
