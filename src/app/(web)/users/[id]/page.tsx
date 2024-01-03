@@ -13,8 +13,11 @@ import { signOut } from "next-auth/react";
 import { useState } from "react";
 import { BsJournalBookmarkFill } from "react-icons/bs";
 import { GiMoneyStack } from "react-icons/gi";
-import Chart from "@/components/Chart/Chart";
-import Table from "@/components/Table/Table";
+import Chart from "@/components/Chart";
+import Table from "@/components/Table";
+import RatingModal from "@/components/RatingModal";
+import BackDrop from "@/components/BackDrop";
+import toast from "react-hot-toast";
 
 interface Props {
   params: { id: string };
@@ -39,6 +42,35 @@ export default function UserDetails({ params: { id } }: Props) {
 
   const toggleRatingModal = () => {
     setIsRatingVisible((prevState) => !prevState);
+  };
+
+  const reviewSubmitHandler = async () => {
+    if (!ratingText.trim().length || !ratingValue) {
+      return toast.error("texto ou avaliação não foi encontrada");
+    }
+
+    if (!roomId) toast.error("Id Não encontrado");
+
+    setIsSubmittingReview(true);
+
+    try {
+      const { data } = await axios.post("/api/users", {
+        reviewText: ratingText,
+        ratingValue,
+        roomId,
+      });
+      console.log(data);
+      toast.success("Review Envidado com sucesso!");
+    } catch (error) {
+      console.log(error);
+      toast.error("Falha ao tenta envia avaliação");
+    } finally {
+      setRatingText("");
+      setRatingValue(null);
+      setRoomId(null);
+      setIsSubmittingReview(false);
+      setIsRatingVisible(false);
+    }
   };
 
   const {
@@ -180,6 +212,17 @@ export default function UserDetails({ params: { id } }: Props) {
           ) : (
             <></>
           )}
+          <RatingModal
+            isOpen={isRatingVisible}
+            ratingValue={ratingValue}
+            setRatingValue={setRatingValue}
+            ratingText={ratingText}
+            setRatingText={setRatingText}
+            isSubmittingReview={isSubmittingReview}
+            reviewSubmitHandler={reviewSubmitHandler}
+            toggleRatingModal={toggleRatingModal}
+          />
+          <BackDrop isOpen={isRatingVisible} />
         </div>
       </div>
     </div>

@@ -15,7 +15,7 @@ export async function getFeaturedRoom() {
   const result = await client.fetch<Room>(
     queries.getFeaturedRoomQuery,
     {},
-    { cache: "force-cache" },
+    { cache: "no-cache" },
     // {next:{revalidate:1800} }, //30 min pode substituir a ultima linha 15
     //   { cache: "no-cache" } //30 min pode substituir a ultima linha 15
   );
@@ -27,7 +27,7 @@ export async function getRooms() {
   const result = await client.fetch<Room[]>(
     queries.getRoomsQuery,
     {},
-    { cache: "force-cache" },
+    { cache: "no-cache" },
   );
   return result;
 }
@@ -36,7 +36,7 @@ export async function getRoom(slug: string) {
   const result = await client.fetch<Room>(
     queries.getRoom,
     { slug },
-    { cache: "force-cache" },
+    { cache: "no-cache" },
   );
 
   return result;
@@ -81,7 +81,7 @@ export const createBooking = async ({
       },
     },
   );
-  // console.log("CREATED RESPONSE>>>>", data);
+  console.log("CREATED RESPONSE>>>>", data);
   return data;
 };
 
@@ -138,7 +138,7 @@ export async function checkReviewExists(
   userId: string,
   hotelRoomId: string,
 ): Promise<null | { _id: string }> {
-  const query = `*[_type == 'inns-review' && user._ref == $userId && inns-hotelRoom._ref == $inns-hotelRoomId][0] {
+  const query = `*[_type == 'inns-review' && user._ref == $userId && inns-hotelRoom._ref == $hotelRoomId][0] {
     _id
   }`;
 
@@ -194,7 +194,7 @@ export const createReview = async ({
     mutations: [
       {
         create: {
-          _type: "review",
+          _type: "inns-review",
           user: {
             _type: "reference",
             _ref: userId,

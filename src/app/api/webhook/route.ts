@@ -33,7 +33,7 @@ export async function POST(req: Request, res: Response) {
   switch (event.type) {
     case checkout_session_completed:
       const session = event.data.object;
-      // console.log("SESSION =>>>", session);
+      console.log("SESSION =>>>", session);
 
       const {
         metadata: {
