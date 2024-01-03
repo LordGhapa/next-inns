@@ -1,0 +1,24 @@
+# Warning: Do not add secrets (API keys and similar) to this file, as it source controlled!
+# Use `.env.local` for any secrets, and ensure it is not added to source control
+
+NEXT_PUBLIC_SANITY_PROJECT_ID=
+NEXT_PUBLIC_SANITY_DATASET=
+
+GITHUB_CLIENT_ID=
+GITHUB_CLIENT_SECRET=
+
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+
+NEXTAUTH_SECRET=
+
+
+NEXT_PUBLIC_SANITY_STUDIO_TOKEN=
+
+
+STRIPE_SECRET_KEY=
+
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
+
+# esse webhook do stripe so é valido por 90 dias lembrar de atualizar é so da todas as permissoes na duvida
+STRIPE_WEBHOOK_SECRET=
