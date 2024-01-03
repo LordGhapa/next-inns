@@ -49,7 +49,7 @@ export default function FeatureRoom({ featuredRoom }: Props) {
             <div className="mr-4 flex flex-col items-center justify-center gap-3">
               <p className="text-center text-xs lg:text-xl">Desconto</p>
               <p className="flex text-lg font-medium md:font-bold xl:text-5xl">
-                R$ {featuredRoom.discount}
+                {featuredRoom.discount}%
               </p>
             </div>
           </div>
