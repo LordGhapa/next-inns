@@ -101,13 +101,23 @@ export default function UserDetails({ params: { id } }: Props) {
       <div className="grid gap-10 md:grid-cols-12 ">
         <div className="sticky top-10 hidden h-fit rounded-lg  bg-[#eff0f2] px-6 py-4 text-black shadow-lg md:col-span-4 md:block lg:col-span-3 ">
           <div className="mx-auto mb-5 h-28 w-28 overflow-hidden rounded-full md:h-[143px] md:w-[143px]">
-            <Image
-              src={userData.image}
-              alt={userData.name}
-              width={143}
-              height={143}
-              className="img scale-animation rounded-full"
-            />
+            {userData?.image ? (
+              <Image
+                className="img scale-animation rounded-full"
+                width={143}
+                height={143}
+                src={userData.image}
+                alt={userData.name}
+              />
+            ) : (
+              <Image
+                className="img scale-animation rounded-full"
+                width={143}
+                height={143}
+                src="/imgnot.jpg"
+                alt={userData.name}
+              />
+            )}
           </div>
           <div className="py-4 text-left font-normal">
             <h6 className="pb-3 text-xl font-bold">Sobre</h6>
@@ -131,14 +141,24 @@ export default function UserDetails({ params: { id } }: Props) {
           <div className="flex items-center">
             <h5 className="mr-3 text-2xl font-bold">Ola, {userData.name}</h5>
           </div>
-          <div className="h-14 w-14 overflow-hidden rounded-l-full md:hidden">
-            <Image
-              className="img scale-animation rounded-full"
-              width={56}
-              height={56}
-              src={userData.image}
-              alt={userData.name}
-            />
+          <div className="h-14 w-14 overflow-hidden rounded-full md:hidden">
+            {userData?.image ? (
+              <Image
+                className="img scale-animation rounded-full"
+                width={56}
+                height={56}
+                src={userData.image}
+                alt={userData.name}
+              />
+            ) : (
+              <Image
+                className="img scale-animation rounded-full"
+                width={56}
+                height={56}
+                src="/imgnot.jpg"
+                alt={userData.name}
+              />
+            )}
           </div>
           <p className="block w-fit py-2 text-sm md:hidden">
             {userData.about ?? ""}
